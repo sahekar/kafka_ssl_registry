@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # docker-kafka-ssl
 
 Playing with SSL enabeled Kafka in Docker.
@@ -33,3 +34,6 @@ Put some messages into Kafka
 
 * http://docs.confluent.io/2.0.0/kafka/ssl.html#configuring-kafka-brokers
 * https://www.confluent.io/blog/apache-kafka-security-authorization-authentication-encryption/
+=======
+# kafka_ssl_registry
+>>>>>>> 3a1efbd33bc18776f9cc2403a981082f98fd4f8d
