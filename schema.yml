@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+  schema-registry1:
+    image: "confluentinc/cp-schema-registry:4.1.0"
+    hostname: schema-registry
+    ports:
+      - '9091:8081'
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: 'schema-registry'
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'SSL://195.201.184.240:9092'
+      SCHEMA_REGISTRY_KAFKASTORE_SECURITY_PROTOCOL: 'SSL'
+      SCHEMA_REGISTRY_KAFKASTORE_SSL_TRUSTSTORE_LOCATION: '/certs/kubernetes.master.truststore.jks'
+      SCHEMA_REGISTRY_KAFKASTORE_SSL_TRUSTSTORE_PASSWORD: 'kafkadocker'
+      SCHEMA_REGISTRY_KAFKASTORE_SSL_KEYSTORE_LOCATION: '/certs/kubernetes.master.keystore.jks'
+      SCHEMA_REGISTRY_KAFKASTORE_SSL_KEYSTORE_PASSWORD: 'kafkadocker'
+      SCHEMA_REGISTRY_KAFKASTORE_SSL_KEY_PASSWORD: 'kafkadocker'
+    logging:
+      driver: json-file
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /certs:/certs
